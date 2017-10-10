@@ -66,7 +66,7 @@ namespace TesteurSerial
             MonJeu.VoirClassement();
             Console.ReadKey();
 
-
+            //dfsofjqsp
 
             //Jouons quelques parties ....
             MonJeu.JouerPartie(); //1ere partie avec un joueur par défaut
