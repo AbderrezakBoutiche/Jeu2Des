@@ -79,7 +79,9 @@ namespace Jeu2Des
             }
 
             //TODO : dans cette version le résutat est affiché à la console
-            //TODO : en attendant la mise e place du classement 
+            //TODO : en attendant la mise du place du classement 
+
+
             Console.WriteLine(this.ToString()); 
             return _Score;
         }

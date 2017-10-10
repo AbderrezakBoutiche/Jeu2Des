@@ -18,6 +18,16 @@ namespace Jeu2Des
        
         private Joueur _Joueur;
 
+        private Classement _classement;
+        
+
+        public Classement classement
+        {
+            get { return _classement; }
+            set { _classement = value; }
+        }
+
+
         /// <summary>
         /// Représente le joueur courant (celui qui joue une partie)
         /// </summary>
@@ -40,6 +50,8 @@ namespace Jeu2Des
             //On aurait pu créer les 2 Des juste au moment de jouer  
             _Des[0] = new De();
             _Des[1] = new De();
+            _classement = new Classement();
+            _classement.Load();
             
         }
 
@@ -55,6 +67,8 @@ namespace Jeu2Des
 
             //On fait jouer le joueur en lui passant les 2 dés
             int resultat = _Joueur.Jouer(_Des);
+
+            _classement.AjouterEntree(nom, resultat);
            
         }
 
@@ -70,8 +84,30 @@ namespace Jeu2Des
 
             //Le joueur Joue et on récupère son score
             int resultat = _Joueur.Jouer(_Des);
+
+            _classement.AjouterEntree(_Joueur.Nom, resultat);
             
+
         }
-        
+
+
+
+        public void VoirClassement()
+        {
+            _classement.FaireClassement();
+            Console.WriteLine("\r\n***********************************");
+            _classement.TopN(3);
+        }
+
+        public void Quitter()
+        {
+            _classement.Save();
+        }
+
+
+
+
+
+
     }
 }

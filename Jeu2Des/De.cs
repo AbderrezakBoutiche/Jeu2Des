@@ -35,7 +35,7 @@ namespace Jeu2Des
       public int Valeur
       {
           get { return _Valeur; }
-          //Pas de set s€inon la valeur du Dé pourrait être changée sans le lancer
+          //Pas de set sinon la valeur du Dé pourrait être changée sans le lancer
       }
         
       /// <summary>
